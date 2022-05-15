@@ -14,7 +14,7 @@ class Topic(models.Model):
 
 class Tweet(models.Model):
     twitter_id = models.BigIntegerField()
-    topic = models.ForeignKey(Topic)
+    topic = models.ForeignKey(Topic, on_delete = models.CASCADE)
     user_name = models.CharField(max_length=255)
     user_screenname = models.CharField(max_length=255)
     user_location = models.CharField(max_length=255, null=True, blank=True)

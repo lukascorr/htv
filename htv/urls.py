@@ -13,18 +13,18 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.urls import re_path
 from django.contrib import admin
 
 from django.views.decorators.cache import cache_page
 
-from frontend.views import index, results, json_results
+from twitter_app.views import index, results, json_results
 
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^$', index),
-    url(r'^search/(?P<key>\w+)/$', results, name="searching"),
-    url(r'^search/(?P<key>\w+)/(?P<freq>\d+)/$', cache_page(0)(results), name="searching"),
-    url(r'^json/(?P<key>\w+)/$', cache_page(0)(json_results), name="json_response"),
+    re_path(r'^admin/', admin.site.urls),
+    re_path(r'^$', index),
+    re_path(r'^search/(?P<key>\w+)/$', results, name="searching"),
+    re_path(r'^search/(?P<key>\w+)/(?P<freq>\d+)/$', cache_page(0)(results), name="searching"),
+    re_path(r'^json/(?P<key>\w+)/$', cache_page(0)(json_results), name="json_response"),
 ]
