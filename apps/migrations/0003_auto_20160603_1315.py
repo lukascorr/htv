@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('twitter_app', '0002_topic_frequency'),
+        ('apps', '0002_topic_frequency'),
     ]
 
     operations = [

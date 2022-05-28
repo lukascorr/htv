@@ -2,9 +2,9 @@ import json
 from django.http import HttpResponse
 from django.views.generic import TemplateView
 
-from twitter_app.api import TwitterAPI
-from twitter_app.models import Topic, Tweet
-
+from apps.api import TwitterAPI
+from apps.models import Topic, Tweet
+from django.conf import settings
 
 class IndexView(TemplateView):
     template_name = "frontend/index.html"

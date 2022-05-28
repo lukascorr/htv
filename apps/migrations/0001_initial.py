@@ -37,7 +37,7 @@ class Migration(migrations.Migration):
                 ('media_url', models.CharField(blank=True, max_length=255, null=True)),
                 ('is_shown', models.BooleanField(default=False)),
                 ('last_shown', models.DateTimeField(blank=True, null=True)),
-                ('topic', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='twitter_app.Topic')),
+                ('topic', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='apps.Topic')),
             ],
         ),
     ]

@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'channels',
-    'twitter_app'
+    'apps',
 ]
 
 MIDDLEWARE = [

@@ -8,7 +8,7 @@ from channels.security.websocket import AllowedHostsOriginValidator
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'htv.settings')
 
-import twitter_app.routing
+import apps.routing
 
 application = ProtocolTypeRouter({
     "http": get_asgi_application(),
@@ -16,7 +16,7 @@ application = ProtocolTypeRouter({
     "websocket": AllowedHostsOriginValidator(
         AuthMiddlewareStack(
             URLRouter(
-                twitter_app.routing.websocket_urlpatterns
+                apps.routing.websocket_urlpatterns
             )
         )
     ), 

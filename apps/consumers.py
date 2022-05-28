@@ -5,8 +5,8 @@ from time import sleep
 
 from channels.generic.websocket import WebsocketConsumer
 
-from twitter_app.api import TwitterAPI
-from twitter_app.models import Topic, Tweet
+from apps.api import TwitterAPI
+from apps.models import Topic, Tweet
 
 from asgiref.sync import async_to_sync
 
@@ -98,4 +98,11 @@ class Consumer(WebsocketConsumer):
             self.room_group_name,
             self.channel_name
         )
-#        Group(self.scope['groupname']).discard(message.reply_channel)
+
+
+    def chat_message(self, event):
+        message = event['message']
+
+        self.send(text_data=json.dumps({
+            'message': message
+        }))        

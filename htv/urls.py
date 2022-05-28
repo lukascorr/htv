@@ -18,7 +18,7 @@ from django.contrib import admin
 
 from django.views.decorators.cache import cache_page
 
-from twitter_app.views import index, results, json_results
+from apps.views import index, results, json_results
 
 
 urlpatterns = [
